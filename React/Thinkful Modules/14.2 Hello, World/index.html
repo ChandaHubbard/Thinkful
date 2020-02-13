@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Hello World</title>
+  </head>
+  <body>
+    <div id="application-root"></div>
+    <!-- library files -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!-- creates global variable React -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- to use react when building webpages, conatins methods that live on the
+    global variable ReactDOM, which we can use to connect our React code to the
+    DOM -->
+    <!-- Babel so that we can use JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+       
+    </script>
+    <script type="text/babel">
+
+function App(args) {
+            console.log(args)
+        return <span id='app-id' className='app-class'>My App</span>;
+      }
+
+      ReactDOM.render(
+        <App className='new-class-name' />,
+        document.querySelector('#application-root')
+      );
+      //never use type="text/babel" in production code as it is very slow, good for learningand simple demos
+      // Our code will go here
+      //const appRoot = document.querySelector("#application-root");
+      //We've used the querySelector method on the global document object in JavaScript to select the #application-root element in the page. The querySelector method isn't React specific code, it's a generic JavaScript function that's provided by the browser. The querySelector method enables us to select DOM nodes and manipulate them with JavaScript. We supply the argument of a CSS selector string to specify which DOM nodes to select.
+      //In our script, we store the result of document.querySelector('#application-root') in a variable called appRoot. This is a DOM object that references the element we selected
+
+      //tell the DOM part, ReactDOM, to render our app onto the webpage (the DOM). We can use the render() method
+      //ReactDOM.render("Hello, world!", appRoot);
+      //The render() method accepts 2 arguments, element and container:
+      //container: The DOM element we insert our app into. In this case, we'll select the #application-root we created in our index.html file.
+      //element: Our React application, this will become the contents of the container.
+      //This code inserts the string 'Hello, world!' into the div with the id of application-root
+
+      //before Babel/JSX
+      //const helloWorldH1 = React.createElement("h1", null, "Hello, world!");
+      //const helloWorldH1 = <h1>Hello, world!</h1>;
+
+      //ReactDOM.render(helloWorldH1, appRoot);
+      ReactDOM.render(
+        <div>
+          <h1>Hello, world!</h1>
+          <p>How are you today?</p>
+          <h2>Look what React can do!</h2>
+        </div>,
+        document.querySelector("#application-root")
+      );
+    </script>
+  </body>
+</html>
